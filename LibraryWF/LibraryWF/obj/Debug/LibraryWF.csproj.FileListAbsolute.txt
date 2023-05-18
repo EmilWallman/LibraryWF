@@ -1,0 +1,16 @@
+C:\Users\emil.wallman\LibraryWF\LibraryWF\LibraryWF\bin\Debug\LibraryWF.exe.config
+C:\Users\emil.wallman\LibraryWF\LibraryWF\LibraryWF\bin\Debug\LibraryWF.exe
+C:\Users\emil.wallman\LibraryWF\LibraryWF\LibraryWF\bin\Debug\LibraryWF.pdb
+C:\Users\emil.wallman\LibraryWF\LibraryWF\LibraryWF\obj\Debug\LibraryWF.csproj.AssemblyReference.cache
+C:\Users\emil.wallman\LibraryWF\LibraryWF\LibraryWF\obj\Debug\LibraryWF.csproj.SuggestedBindingRedirects.cache
+C:\Users\emil.wallman\LibraryWF\LibraryWF\LibraryWF\obj\Debug\LibraryWF.Properties.Resources.resources
+C:\Users\emil.wallman\LibraryWF\LibraryWF\LibraryWF\obj\Debug\LibraryWF.csproj.GenerateResource.cache
+C:\Users\emil.wallman\LibraryWF\LibraryWF\LibraryWF\obj\Debug\LibraryWF.csproj.CoreCompileInputs.cache
+C:\Users\emil.wallman\LibraryWF\LibraryWF\LibraryWF\obj\Debug\LibraryWF.exe
+C:\Users\emil.wallman\LibraryWF\LibraryWF\LibraryWF\obj\Debug\LibraryWF.pdb
+C:\Users\emil.wallman\LibraryWF\LibraryWF\LibraryWF\obj\Debug\LibraryWF.Login.resources
+C:\Users\emil.wallman\LibraryWF\LibraryWF\LibraryWF\bin\Debug\System.Management.Automation.dll
+C:\Users\emil.wallman\LibraryWF\LibraryWF\LibraryWF\bin\Debug\Microsoft.Management.Infrastructure.dll
+C:\Users\emil.wallman\LibraryWF\LibraryWF\LibraryWF\bin\Debug\System.Management.Automation.xml
+C:\Users\emil.wallman\LibraryWF\LibraryWF\LibraryWF\obj\Debug\LibraryWF.csproj.CopyComplete
+C:\Users\emil.wallman\LibraryWF\LibraryWF\LibraryWF\obj\Debug\LibraryWF.Menu.resources
