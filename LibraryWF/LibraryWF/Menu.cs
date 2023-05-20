@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.IO;
@@ -16,10 +17,14 @@ namespace LibraryWF
     {
         private MenuLogic menuLogic;
 
-        public Menu()
+        //Send over the current ssn from login
+        private CurrentUser currentUser;
+
+        public Menu(CurrentUser user)
         {
             InitializeComponent();
             menuLogic = new MenuLogic("users.txt");
+            currentUser = user;
         }
 
         //gets the current users ssn from login form
@@ -40,7 +45,7 @@ namespace LibraryWF
             menuLogic = new MenuLogic();
             
             //Checks if the current user is Admin
-            bool isAdmin = menuLogic.isAdmin();
+            bool isAdmin = menuLogic.isAdmin(currentUser.ssn);
 
              
             if (isAdmin == true)
@@ -66,7 +71,7 @@ namespace LibraryWF
 
         private string file;
         public List<User> users;
-        public User currentUser;
+        //public User currentUser;
 
         public MenuLogic(string file)
         {
@@ -79,17 +84,17 @@ namespace LibraryWF
             LoadUsers();
         }
 
-        public bool isAdmin()
+        public bool isAdmin(string currentUser)
         {
             LoadUsers();
             foreach (User user in users)
             {
                 //userSSN does not work
-                if(user.isAdmin == true && user.ssn == userSSN)
+                if(user.isAdmin == true && user.ssn == currentUser)
                 {
                     return true;
                 }
-                if(user.isAdmin == false && user.ssn == userSSN)
+                if(user.isAdmin == false && user.ssn == currentUser)
                 {
                     return false;
                 }

@@ -19,6 +19,7 @@ namespace LibraryWF
     public partial class Login : Form
     {
         private UserManeger userManeger;
+        public CurrentUser currentUser = new CurrentUser();
 
 
         public Login()
@@ -57,9 +58,9 @@ namespace LibraryWF
         public void Submit_Click(object sender, EventArgs e)
         {
             lError.Visible = false;
-            Menu menu = new Menu();
+            Menu menu = new Menu(currentUser);
             MenuLogic menuLogic = new MenuLogic();
-
+            
             
             //Create account
             if (lSSN.Visible == true)
@@ -80,8 +81,12 @@ namespace LibraryWF
 
                     if (CreateAccount == true)
                     {
+
                         string UserSsn = userManeger.userSSN(username, password);
                         menuLogic.userSSN = UserSsn;
+
+                        currentUser.ssn = UserSsn;
+
                         menuLogic.Menu1(UserSsn);
 
 
@@ -106,7 +111,7 @@ namespace LibraryWF
                     string UserSsn = userManeger.userSSN(username, password);
                     
                     menuLogic.userSSN = UserSsn;
-                    
+                    currentUser.ssn = UserSsn;
 
                     
                     this.Hide();

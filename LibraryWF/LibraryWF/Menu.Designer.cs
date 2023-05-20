@@ -91,7 +91,6 @@
             this.btnEditUsername.TabIndex = 4;
             this.btnEditUsername.Text = "Edit Username";
             this.btnEditUsername.UseVisualStyleBackColor = true;
-            this.btnEditUsername.Visible = false;
             // 
             // btnEditPassword
             // 
@@ -101,7 +100,6 @@
             this.btnEditPassword.TabIndex = 5;
             this.btnEditPassword.Text = "Edit Password";
             this.btnEditPassword.UseVisualStyleBackColor = true;
-            this.btnEditPassword.Visible = false;
             // 
             // btnEditSSN
             // 
@@ -111,7 +109,6 @@
             this.btnEditSSN.TabIndex = 6;
             this.btnEditSSN.Text = "Edit SSN";
             this.btnEditSSN.UseVisualStyleBackColor = true;
-            this.btnEditSSN.Visible = false;
             // 
             // textBox1
             // 
@@ -119,7 +116,6 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 7;
-            this.textBox1.Visible = false;
             // 
             // label2
             // 
@@ -130,7 +126,6 @@
             this.label2.Size = new System.Drawing.Size(67, 25);
             this.label2.TabIndex = 8;
             this.label2.Text = "Input:";
-            this.label2.Visible = false;
             // 
             // btnEditSubmit
             // 
@@ -140,7 +135,6 @@
             this.btnEditSubmit.TabIndex = 9;
             this.btnEditSubmit.Text = "Submit";
             this.btnEditSubmit.UseVisualStyleBackColor = true;
-            this.btnEditSubmit.Visible = false;
             // 
             // comboBoxSUser
             // 

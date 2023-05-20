@@ -18,4 +18,8 @@ namespace librarywf
             this.ssn = ssn;
         }
     }
+    public class CurrentUser
+    {
+        public string ssn;
+    }
 }
