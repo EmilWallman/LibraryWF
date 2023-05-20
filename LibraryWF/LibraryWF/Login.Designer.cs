@@ -39,6 +39,7 @@
             this.btnCreateAcc = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.btnSubbmit = new System.Windows.Forms.Button();
+            this.lError = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -146,11 +147,24 @@
             this.btnSubbmit.Visible = false;
             this.btnSubbmit.Click += new System.EventHandler(this.Submit_Click);
             // 
+            // lError
+            // 
+            this.lError.AutoSize = true;
+            this.lError.BackColor = System.Drawing.Color.Red;
+            this.lError.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lError.Location = new System.Drawing.Point(350, 253);
+            this.lError.Name = "lError";
+            this.lError.Size = new System.Drawing.Size(191, 13);
+            this.lError.TabIndex = 11;
+            this.lError.Text = "Incorrect Username or Password";
+            this.lError.Visible = false;
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(998, 574);
+            this.Controls.Add(this.lError);
             this.Controls.Add(this.btnSubbmit);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btnCreateAcc);
@@ -182,6 +196,7 @@
         private System.Windows.Forms.Button btnCreateAcc;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnSubbmit;
+        private System.Windows.Forms.Label lError;
     }
 }
 

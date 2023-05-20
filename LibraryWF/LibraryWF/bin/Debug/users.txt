@@ -1,1 +1,2 @@
 Admin,admin,1000,True
+Emil,emil,1234,False

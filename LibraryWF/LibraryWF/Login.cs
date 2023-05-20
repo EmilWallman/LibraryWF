@@ -19,6 +19,8 @@ namespace LibraryWF
     public partial class Login : Form
     {
         private UserManeger userManeger;
+
+
         public Login()
         {
             InitializeComponent();
@@ -32,24 +34,62 @@ namespace LibraryWF
             
             tbUsername.Visible = true;
             tbPassword.Visible = true;
+            tbSSN.Visible = false;
             lUsername.Visible = true;
             lPassword.Visible = true;
+            lSSN.Visible = false;
             btnSubbmit.Visible = true;
+            
         }
 
         //Shows the nessesarry inputs to create an account
         public void createAcc_Click(object sender, EventArgs e)
         {
-
+            tbUsername.Visible = true;
+            tbPassword.Visible = true;
+            tbSSN.Visible = true;
+            lUsername.Visible = true;
+            lPassword.Visible = true;
+            lSSN.Visible = true;
+            btnSubbmit.Visible = true;
         }
 
         public void Submit_Click(object sender, EventArgs e)
         {
+            lError.Visible = false;
+            Menu menu = new Menu();
+            MenuLogic menuLogic = new MenuLogic();
 
             
             //Create account
             if (lSSN.Visible == true)
             {
+                string username = tbUsername.Text;
+                string password = tbPassword.Text;
+                string ssn = tbSSN.Text;
+
+                bool UserExists = userManeger.UserExists(username, password);
+
+                if (UserExists == true)
+                {
+                    //type in error
+                }
+                else
+                {
+                    bool CreateAccount = userManeger.CreateAccount(username, password, ssn);
+
+                    if (CreateAccount == true)
+                    {
+                        string UserSsn = userManeger.userSSN(username, password);
+                        menuLogic.userSSN = UserSsn;
+                        menuLogic.Menu1(UserSsn);
+
+
+                        this.Hide();
+                        menu.Show();
+
+                    }
+                }
 
             }
 
@@ -63,11 +103,23 @@ namespace LibraryWF
 
                 if (UserExists == true)
                 {
-                    this.Hide();
-                    Menu menu = new Menu();
-                    menu.Show();
-                }
+                    string UserSsn = userManeger.userSSN(username, password);
+                    
+                    menuLogic.userSSN = UserSsn;
+                    
 
+                    
+                    this.Hide();
+                    menu.Show();
+
+                    
+                }
+                else
+                {
+                    tbPassword.Clear();
+                    tbUsername.Clear();
+                    lError.Visible = true;
+                }
 
             }
         }
@@ -96,6 +148,26 @@ namespace LibraryWF
                 }
             }
             return false;
+        }
+        public string userSSN(string username, string password)
+        {
+            foreach(User user in users)
+            {
+                if(user.username == username && user.password == password)
+                {
+                    return user.ssn;
+                }
+            }
+            return "-1";
+        }
+
+        public bool CreateAccount(string username, string password, string ssn)
+        {
+            User user = new User(username, password, ssn, false);
+            users.Add(user);
+            SaveUsers();
+            return true;
+
         }
 
         public void LoadUsers()

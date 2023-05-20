@@ -41,13 +41,15 @@
             this.comboBoxSUser = new System.Windows.Forms.ComboBox();
             this.Label3 = new System.Windows.Forms.Label();
             this.checkAnotherUser = new System.Windows.Forms.CheckBox();
+            this.boxEditUser = new System.Windows.Forms.GroupBox();
+            this.boxEditUser.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 35F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(83, 46);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(174, 54);
             this.label1.TabIndex = 0;
@@ -55,16 +57,17 @@
             // 
             // btnEditUser
             // 
-            this.btnEditUser.Location = new System.Drawing.Point(21, 98);
+            this.btnEditUser.Location = new System.Drawing.Point(92, 135);
             this.btnEditUser.Name = "btnEditUser";
             this.btnEditUser.Size = new System.Drawing.Size(184, 56);
             this.btnEditUser.TabIndex = 1;
             this.btnEditUser.Text = "Edit";
             this.btnEditUser.UseVisualStyleBackColor = true;
+            this.btnEditUser.Click += new System.EventHandler(this.btnEditUser_Click);
             // 
             // btnLibrary
             // 
-            this.btnLibrary.Location = new System.Drawing.Point(21, 160);
+            this.btnLibrary.Location = new System.Drawing.Point(92, 197);
             this.btnLibrary.Name = "btnLibrary";
             this.btnLibrary.Size = new System.Drawing.Size(184, 56);
             this.btnLibrary.TabIndex = 2;
@@ -73,7 +76,7 @@
             // 
             // btnLogOut
             // 
-            this.btnLogOut.Location = new System.Drawing.Point(21, 222);
+            this.btnLogOut.Location = new System.Drawing.Point(92, 259);
             this.btnLogOut.Name = "btnLogOut";
             this.btnLogOut.Size = new System.Drawing.Size(184, 56);
             this.btnLogOut.TabIndex = 3;
@@ -82,99 +85,119 @@
             // 
             // btnEditUsername
             // 
-            this.btnEditUsername.Location = new System.Drawing.Point(600, 167);
+            this.btnEditUsername.Location = new System.Drawing.Point(13, 25);
             this.btnEditUsername.Name = "btnEditUsername";
             this.btnEditUsername.Size = new System.Drawing.Size(108, 23);
             this.btnEditUsername.TabIndex = 4;
             this.btnEditUsername.Text = "Edit Username";
             this.btnEditUsername.UseVisualStyleBackColor = true;
+            this.btnEditUsername.Visible = false;
             // 
             // btnEditPassword
             // 
-            this.btnEditPassword.Location = new System.Drawing.Point(600, 197);
+            this.btnEditPassword.Location = new System.Drawing.Point(13, 54);
             this.btnEditPassword.Name = "btnEditPassword";
             this.btnEditPassword.Size = new System.Drawing.Size(108, 23);
             this.btnEditPassword.TabIndex = 5;
             this.btnEditPassword.Text = "Edit Password";
             this.btnEditPassword.UseVisualStyleBackColor = true;
+            this.btnEditPassword.Visible = false;
             // 
             // btnEditSSN
             // 
-            this.btnEditSSN.Location = new System.Drawing.Point(600, 227);
+            this.btnEditSSN.Location = new System.Drawing.Point(13, 83);
             this.btnEditSSN.Name = "btnEditSSN";
             this.btnEditSSN.Size = new System.Drawing.Size(108, 23);
             this.btnEditSSN.TabIndex = 6;
             this.btnEditSSN.Text = "Edit SSN";
             this.btnEditSSN.UseVisualStyleBackColor = true;
+            this.btnEditSSN.Visible = false;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(662, 259);
+            this.textBox1.Location = new System.Drawing.Point(135, 156);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 7;
+            this.textBox1.Visible = false;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(595, 253);
+            this.label2.Location = new System.Drawing.Point(68, 150);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(67, 25);
             this.label2.TabIndex = 8;
             this.label2.Text = "Input:";
+            this.label2.Visible = false;
             // 
             // btnEditSubmit
             // 
-            this.btnEditSubmit.Location = new System.Drawing.Point(781, 255);
+            this.btnEditSubmit.Location = new System.Drawing.Point(261, 156);
             this.btnEditSubmit.Name = "btnEditSubmit";
             this.btnEditSubmit.Size = new System.Drawing.Size(75, 23);
             this.btnEditSubmit.TabIndex = 9;
             this.btnEditSubmit.Text = "Submit";
             this.btnEditSubmit.UseVisualStyleBackColor = true;
+            this.btnEditSubmit.Visible = false;
             // 
             // comboBoxSUser
             // 
             this.comboBoxSUser.FormattingEnabled = true;
-            this.comboBoxSUser.Location = new System.Drawing.Point(600, 354);
+            this.comboBoxSUser.Location = new System.Drawing.Point(517, 358);
             this.comboBoxSUser.Name = "comboBoxSUser";
             this.comboBoxSUser.Size = new System.Drawing.Size(121, 21);
             this.comboBoxSUser.TabIndex = 10;
+            this.comboBoxSUser.Visible = false;
             // 
             // Label3
             // 
             this.Label3.AutoSize = true;
             this.Label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label3.Location = new System.Drawing.Point(595, 326);
+            this.Label3.Location = new System.Drawing.Point(512, 330);
             this.Label3.Name = "Label3";
             this.Label3.Size = new System.Drawing.Size(131, 25);
             this.Label3.TabIndex = 11;
             this.Label3.Text = "Select User:";
+            this.Label3.Visible = false;
             // 
             // checkAnotherUser
             // 
             this.checkAnotherUser.AutoSize = true;
-            this.checkAnotherUser.Location = new System.Drawing.Point(781, 160);
+            this.checkAnotherUser.Location = new System.Drawing.Point(418, 338);
             this.checkAnotherUser.Name = "checkAnotherUser";
             this.checkAnotherUser.Size = new System.Drawing.Size(88, 17);
             this.checkAnotherUser.TabIndex = 12;
             this.checkAnotherUser.Text = "Another User";
             this.checkAnotherUser.UseVisualStyleBackColor = true;
+            this.checkAnotherUser.Visible = false;
+            // 
+            // boxEditUser
+            // 
+            this.boxEditUser.Controls.Add(this.btnEditUsername);
+            this.boxEditUser.Controls.Add(this.btnEditPassword);
+            this.boxEditUser.Controls.Add(this.btnEditSSN);
+            this.boxEditUser.Controls.Add(this.btnEditSubmit);
+            this.boxEditUser.Controls.Add(this.label2);
+            this.boxEditUser.Controls.Add(this.textBox1);
+            this.boxEditUser.Location = new System.Drawing.Point(405, 103);
+            this.boxEditUser.Name = "boxEditUser";
+            this.boxEditUser.Size = new System.Drawing.Size(425, 212);
+            this.boxEditUser.TabIndex = 13;
+            this.boxEditUser.TabStop = false;
+            this.boxEditUser.Text = "EditUser";
+            this.boxEditUser.Visible = false;
             // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(965, 610);
+            this.Controls.Add(this.boxEditUser);
             this.Controls.Add(this.checkAnotherUser);
             this.Controls.Add(this.Label3);
             this.Controls.Add(this.comboBoxSUser);
-            this.Controls.Add(this.btnEditSubmit);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.btnEditSSN);
-            this.Controls.Add(this.btnEditPassword);
-            this.Controls.Add(this.btnEditUsername);
             this.Controls.Add(this.btnLogOut);
             this.Controls.Add(this.btnLibrary);
             this.Controls.Add(this.btnEditUser);
@@ -182,6 +205,8 @@
             this.Name = "Menu";
             this.Text = "Menu";
             this.Load += new System.EventHandler(this.Menu_Load_1);
+            this.boxEditUser.ResumeLayout(false);
+            this.boxEditUser.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -202,5 +227,6 @@
         private System.Windows.Forms.ComboBox comboBoxSUser;
         private System.Windows.Forms.Label Label3;
         private System.Windows.Forms.CheckBox checkAnotherUser;
+        private System.Windows.Forms.GroupBox boxEditUser;
     }
 }
