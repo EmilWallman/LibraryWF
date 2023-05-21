@@ -32,9 +32,6 @@
             this.btnEditUser = new System.Windows.Forms.Button();
             this.btnLibrary = new System.Windows.Forms.Button();
             this.btnLogOut = new System.Windows.Forms.Button();
-            this.btnEditUsername = new System.Windows.Forms.Button();
-            this.btnEditPassword = new System.Windows.Forms.Button();
-            this.btnEditSSN = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnEditSubmit = new System.Windows.Forms.Button();
@@ -42,6 +39,8 @@
             this.Label3 = new System.Windows.Forms.Label();
             this.checkAnotherUser = new System.Windows.Forms.CheckBox();
             this.boxEditUser = new System.Windows.Forms.GroupBox();
+            this.serviceController1 = new System.ServiceProcess.ServiceController();
+            this.userEditChoice = new System.Windows.Forms.CheckedListBox();
             this.boxEditUser.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -83,33 +82,6 @@
             this.btnLogOut.Text = "Log Out";
             this.btnLogOut.UseVisualStyleBackColor = true;
             // 
-            // btnEditUsername
-            // 
-            this.btnEditUsername.Location = new System.Drawing.Point(13, 25);
-            this.btnEditUsername.Name = "btnEditUsername";
-            this.btnEditUsername.Size = new System.Drawing.Size(108, 23);
-            this.btnEditUsername.TabIndex = 4;
-            this.btnEditUsername.Text = "Edit Username";
-            this.btnEditUsername.UseVisualStyleBackColor = true;
-            // 
-            // btnEditPassword
-            // 
-            this.btnEditPassword.Location = new System.Drawing.Point(13, 54);
-            this.btnEditPassword.Name = "btnEditPassword";
-            this.btnEditPassword.Size = new System.Drawing.Size(108, 23);
-            this.btnEditPassword.TabIndex = 5;
-            this.btnEditPassword.Text = "Edit Password";
-            this.btnEditPassword.UseVisualStyleBackColor = true;
-            // 
-            // btnEditSSN
-            // 
-            this.btnEditSSN.Location = new System.Drawing.Point(13, 83);
-            this.btnEditSSN.Name = "btnEditSSN";
-            this.btnEditSSN.Size = new System.Drawing.Size(108, 23);
-            this.btnEditSSN.TabIndex = 6;
-            this.btnEditSSN.Text = "Edit SSN";
-            this.btnEditSSN.UseVisualStyleBackColor = true;
-            // 
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(135, 156);
@@ -135,6 +107,7 @@
             this.btnEditSubmit.TabIndex = 9;
             this.btnEditSubmit.Text = "Submit";
             this.btnEditSubmit.UseVisualStyleBackColor = true;
+            this.btnEditSubmit.Click += new System.EventHandler(this.SubmitEditUser);
             // 
             // comboBoxSUser
             // 
@@ -166,12 +139,11 @@
             this.checkAnotherUser.Text = "Another User";
             this.checkAnotherUser.UseVisualStyleBackColor = true;
             this.checkAnotherUser.Visible = false;
+            this.checkAnotherUser.Click += new System.EventHandler(this.btnEditUser_Click);
             // 
             // boxEditUser
             // 
-            this.boxEditUser.Controls.Add(this.btnEditUsername);
-            this.boxEditUser.Controls.Add(this.btnEditPassword);
-            this.boxEditUser.Controls.Add(this.btnEditSSN);
+            this.boxEditUser.Controls.Add(this.userEditChoice);
             this.boxEditUser.Controls.Add(this.btnEditSubmit);
             this.boxEditUser.Controls.Add(this.label2);
             this.boxEditUser.Controls.Add(this.textBox1);
@@ -182,6 +154,19 @@
             this.boxEditUser.TabStop = false;
             this.boxEditUser.Text = "EditUser";
             this.boxEditUser.Visible = false;
+            // 
+            // userEditChoice
+            // 
+            this.userEditChoice.FormattingEnabled = true;
+            this.userEditChoice.Items.AddRange(new object[] {
+            "Username",
+            "Password",
+            "SSN"});
+            this.userEditChoice.Location = new System.Drawing.Point(15, 19);
+            this.userEditChoice.Name = "userEditChoice";
+            this.userEditChoice.Size = new System.Drawing.Size(120, 94);
+            this.userEditChoice.TabIndex = 10;
+            this.userEditChoice.SelectedIndexChanged += new System.EventHandler(this.userEditChoice_SelectedIndexChanged);
             // 
             // Menu
             // 
@@ -212,9 +197,6 @@
         private System.Windows.Forms.Button btnEditUser;
         private System.Windows.Forms.Button btnLibrary;
         private System.Windows.Forms.Button btnLogOut;
-        private System.Windows.Forms.Button btnEditUsername;
-        private System.Windows.Forms.Button btnEditPassword;
-        private System.Windows.Forms.Button btnEditSSN;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnEditSubmit;
@@ -222,5 +204,7 @@
         private System.Windows.Forms.Label Label3;
         private System.Windows.Forms.CheckBox checkAnotherUser;
         private System.Windows.Forms.GroupBox boxEditUser;
+        private System.Windows.Forms.CheckedListBox userEditChoice;
+        private System.ServiceProcess.ServiceController serviceController1;
     }
 }

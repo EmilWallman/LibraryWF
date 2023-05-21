@@ -11,6 +11,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+//Add a exit button from all forms
+
 namespace LibraryWF
 {
     public partial class Menu : Form
@@ -37,8 +39,19 @@ namespace LibraryWF
         {
 
         }
-        //Does not work for some reason 
-        //The userSSN is not sent over from login
+
+        private void SubmitEditUser (object sender, EventArgs e)
+        {
+            
+            switch (userEditChoice)
+            {
+                case :
+                    break;
+                default:
+                    break;
+            }
+        }
+
         private void btnEditUser_Click(object sender, EventArgs e)
         {
             //Creates an instance for MenuLogic
@@ -52,8 +65,19 @@ namespace LibraryWF
             {
                 boxEditUser.Visible = true;
                 checkAnotherUser.Visible = true;
-                Label3.Visible = true;
-                comboBoxSUser.Visible = true;
+                if (checkAnotherUser.Checked == true)
+                {
+                    //Get a list with all usernames and adds them to the comboBox
+                    List<string> usernames = menuLogic.Usernames();
+                    foreach(string name in usernames)
+                    {
+                        comboBoxSUser.Items.Add(name);
+                    }
+
+                    Label3.Visible = true;
+                    comboBoxSUser.Visible = true;
+                }
+                
             }
             if (isAdmin == false)
             {
@@ -62,15 +86,27 @@ namespace LibraryWF
             
 
         }
+        //Only one alternative can be selected
+        private void userEditChoice_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int iSelectedIndex = userEditChoice.SelectedIndex;
+            if (iSelectedIndex == -1)
+                return;
+            for (int iIndex = 0; iIndex < userEditChoice.Items.Count; iIndex++)
+                userEditChoice.SetItemCheckState(iIndex, CheckState.Unchecked);
+            userEditChoice.SetItemCheckState(iSelectedIndex, CheckState.Checked);
+        }
     }
 
     public class MenuLogic
     {
-        public string userSSN { get; set; }
+        //Prob dont need 
+        //public string userSSN { get; set; }
 
 
         private string file;
         public List<User> users;
+        //Maby dont have this
         //public User currentUser;
 
         public MenuLogic(string file)
@@ -102,6 +138,15 @@ namespace LibraryWF
             return false;
         }
 
+        public List<string> Usernames() 
+        { 
+            List<string> usernames = new List<string> ();
+            foreach(User user in users)
+            {
+                usernames.Add(user.username);
+            }
+            return usernames;
+        }
 
         public void LoadUsers()
         {

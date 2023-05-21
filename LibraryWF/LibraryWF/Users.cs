@@ -21,5 +21,7 @@ namespace librarywf
     public class CurrentUser
     {
         public string ssn;
+        public string username;
+        public string password;
     }
 }

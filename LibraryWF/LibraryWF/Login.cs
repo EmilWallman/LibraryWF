@@ -83,7 +83,7 @@ namespace LibraryWF
                     {
 
                         string UserSsn = userManeger.userSSN(username, password);
-                        menuLogic.userSSN = UserSsn;
+                        //menuLogic.userSSN = UserSsn;
 
                         currentUser.ssn = UserSsn;
 
@@ -110,7 +110,7 @@ namespace LibraryWF
                 {
                     string UserSsn = userManeger.userSSN(username, password);
                     
-                    menuLogic.userSSN = UserSsn;
+                    //menuLogic.userSSN = UserSsn;
                     currentUser.ssn = UserSsn;
 
                     
