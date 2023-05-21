@@ -40,6 +40,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.btnSubbmit = new System.Windows.Forms.Button();
             this.lError = new System.Windows.Forms.Label();
+            this.btnExit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -159,11 +160,22 @@
             this.lError.Text = "Incorrect Username or Password";
             this.lError.Visible = false;
             // 
+            // btnExit
+            // 
+            this.btnExit.Location = new System.Drawing.Point(84, 495);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(75, 23);
+            this.btnExit.TabIndex = 12;
+            this.btnExit.Text = "Exit";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(998, 574);
+            this.Controls.Add(this.btnExit);
             this.Controls.Add(this.lError);
             this.Controls.Add(this.btnSubbmit);
             this.Controls.Add(this.label5);
@@ -197,6 +209,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnSubbmit;
         private System.Windows.Forms.Label lError;
+        private System.Windows.Forms.Button btnExit;
     }
 }
 

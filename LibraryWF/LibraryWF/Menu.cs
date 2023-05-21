@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 
 //Add a exit button from all forms
 
@@ -29,7 +30,7 @@ namespace LibraryWF
             currentUser = user;
         }
 
-        //gets the current users ssn from login form
+        //gets the current users ssn from login form ***?***
         public void logic ()
         {
             
@@ -42,14 +43,47 @@ namespace LibraryWF
 
         private void SubmitEditUser (object sender, EventArgs e)
         {
-            
-            switch (userEditChoice)
+            string user = "";
+            string whatToEdit = "";
+            string input = textBoxInput.Text;
+            bool ok = true;
+
+            if(checkAnotherUser.Checked == true)
             {
-                case :
-                    break;
-                default:
-                    break;
+                user = comboBoxSUser.Text;
             }
+            if(checkAnotherUser.Checked == false)
+            {
+                user = currentUser.ssn;
+            }
+            
+
+            if (checkBoxUsername.Checked == true)
+            {
+                whatToEdit = "username";
+            }
+            if (checkBoxPassword.Checked == true)
+            {
+                whatToEdit = "password";
+            }
+            if (checkBoxSSN.Checked == true)
+            {
+                whatToEdit = "ssn";
+            }
+
+            //display some error
+            
+            if(whatToEdit == "")
+            {
+                ok = false;
+            }
+
+            if (ok == true)
+            {
+                menuLogic.editUser(user, whatToEdit, input);
+            }
+            
+
         }
 
         private void btnEditUser_Click(object sender, EventArgs e)
@@ -81,20 +115,56 @@ namespace LibraryWF
             }
             if (isAdmin == false)
             {
-
+                boxEditUser.Visible = true;
             }
             
 
         }
+        
+        //****HAVE SOME ISSUES nut almost woks and has to be better done ***
         //Only one alternative can be selected
-        private void userEditChoice_SelectedIndexChanged(object sender, EventArgs e)
+        private void userEditChoice1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int iSelectedIndex = userEditChoice.SelectedIndex;
-            if (iSelectedIndex == -1)
-                return;
-            for (int iIndex = 0; iIndex < userEditChoice.Items.Count; iIndex++)
-                userEditChoice.SetItemCheckState(iIndex, CheckState.Unchecked);
-            userEditChoice.SetItemCheckState(iSelectedIndex, CheckState.Checked);
+            checkBoxPassword.Checked = false;
+            checkBoxSSN.Checked = false;
+            
+        }
+        private void userEditChoice2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            checkBoxSSN.Checked = false;
+            checkBoxUsername.Checked = false;
+            
+        }
+        private void userEditChoice3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            checkBoxPassword.Checked = false;
+            checkBoxUsername.Checked = false;
+        }
+
+        //Exit
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+        //LogOut
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            Login login = new Login();
+            this.Hide();
+            login.Show();
+        }
+
+        //Go to library
+        private void btnLibrary_Click(object sender, EventArgs e)
+        {
+            Library library = new Library(currentUser);
+            LibraryLogic libraryLogic = new LibraryLogic();
+            string userSsn = "";
+            currentUser.ssn = userSsn;
+
+            this.Hide();
+            library.Show();
+
         }
     }
 
@@ -119,6 +189,36 @@ namespace LibraryWF
         {
             LoadUsers();
         }
+
+        public void editUser(string selectedUser, string whatToEdit, string input)
+        {
+            LoadUsers();
+
+            foreach(User user in users)
+            {
+                if(user.ssn == selectedUser)
+                {
+                    switch(whatToEdit)
+                    {
+                        case "username":
+                            user.username = input;
+                            SaveUsers();
+                            break;
+                        case "password":
+                            user.password = input;
+                            SaveUsers();
+                            break;
+                        case "ssn":
+                            user.ssn = input;
+                            SaveUsers();
+                            break;
+                    }
+                    break;
+                }
+            }
+
+        }
+
 
         public bool isAdmin(string currentUser)
         {

@@ -87,7 +87,7 @@ namespace LibraryWF
 
                         currentUser.ssn = UserSsn;
 
-                        menuLogic.Menu1(UserSsn);
+                        //menuLogic.Menu1(UserSsn);
 
 
                         this.Hide();
@@ -128,9 +128,14 @@ namespace LibraryWF
 
             }
         }
-        
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
-    
+
+    //Switch to LoginLogic
     public class UserManeger
     {
         private string file;

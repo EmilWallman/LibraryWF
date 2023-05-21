@@ -32,15 +32,18 @@
             this.btnEditUser = new System.Windows.Forms.Button();
             this.btnLibrary = new System.Windows.Forms.Button();
             this.btnLogOut = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxInput = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnEditSubmit = new System.Windows.Forms.Button();
             this.comboBoxSUser = new System.Windows.Forms.ComboBox();
             this.Label3 = new System.Windows.Forms.Label();
             this.checkAnotherUser = new System.Windows.Forms.CheckBox();
             this.boxEditUser = new System.Windows.Forms.GroupBox();
+            this.checkBoxSSN = new System.Windows.Forms.CheckBox();
+            this.checkBoxPassword = new System.Windows.Forms.CheckBox();
+            this.checkBoxUsername = new System.Windows.Forms.CheckBox();
             this.serviceController1 = new System.ServiceProcess.ServiceController();
-            this.userEditChoice = new System.Windows.Forms.CheckedListBox();
+            this.btnExit = new System.Windows.Forms.Button();
             this.boxEditUser.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -72,6 +75,7 @@
             this.btnLibrary.TabIndex = 2;
             this.btnLibrary.Text = "Open Library";
             this.btnLibrary.UseVisualStyleBackColor = true;
+            this.btnLibrary.Click += new System.EventHandler(this.btnLibrary_Click);
             // 
             // btnLogOut
             // 
@@ -81,13 +85,14 @@
             this.btnLogOut.TabIndex = 3;
             this.btnLogOut.Text = "Log Out";
             this.btnLogOut.UseVisualStyleBackColor = true;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
-            // textBox1
+            // textBoxInput
             // 
-            this.textBox1.Location = new System.Drawing.Point(135, 156);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 7;
+            this.textBoxInput.Location = new System.Drawing.Point(135, 156);
+            this.textBoxInput.Name = "textBoxInput";
+            this.textBoxInput.Size = new System.Drawing.Size(100, 20);
+            this.textBoxInput.TabIndex = 7;
             // 
             // label2
             // 
@@ -143,10 +148,12 @@
             // 
             // boxEditUser
             // 
-            this.boxEditUser.Controls.Add(this.userEditChoice);
+            this.boxEditUser.Controls.Add(this.checkBoxSSN);
+            this.boxEditUser.Controls.Add(this.checkBoxPassword);
+            this.boxEditUser.Controls.Add(this.checkBoxUsername);
             this.boxEditUser.Controls.Add(this.btnEditSubmit);
             this.boxEditUser.Controls.Add(this.label2);
-            this.boxEditUser.Controls.Add(this.textBox1);
+            this.boxEditUser.Controls.Add(this.textBoxInput);
             this.boxEditUser.Location = new System.Drawing.Point(405, 103);
             this.boxEditUser.Name = "boxEditUser";
             this.boxEditUser.Size = new System.Drawing.Size(425, 212);
@@ -155,24 +162,58 @@
             this.boxEditUser.Text = "EditUser";
             this.boxEditUser.Visible = false;
             // 
-            // userEditChoice
+            // checkBoxSSN
             // 
-            this.userEditChoice.FormattingEnabled = true;
-            this.userEditChoice.Items.AddRange(new object[] {
-            "Username",
-            "Password",
-            "SSN"});
-            this.userEditChoice.Location = new System.Drawing.Point(15, 19);
-            this.userEditChoice.Name = "userEditChoice";
-            this.userEditChoice.Size = new System.Drawing.Size(120, 94);
-            this.userEditChoice.TabIndex = 10;
-            this.userEditChoice.SelectedIndexChanged += new System.EventHandler(this.userEditChoice_SelectedIndexChanged);
+            this.checkBoxSSN.AutoSize = true;
+            this.checkBoxSSN.Location = new System.Drawing.Point(27, 80);
+            this.checkBoxSSN.Name = "checkBoxSSN";
+            this.checkBoxSSN.Size = new System.Drawing.Size(48, 17);
+            this.checkBoxSSN.TabIndex = 12;
+            this.checkBoxSSN.Text = "SSN";
+            this.checkBoxSSN.UseVisualStyleBackColor = true;
+            this.checkBoxSSN.AppearanceChanged += new System.EventHandler(this.userEditChoice3_SelectedIndexChanged);
+            this.checkBoxSSN.CheckedChanged += new System.EventHandler(this.userEditChoice3_SelectedIndexChanged);
+            // 
+            // checkBoxPassword
+            // 
+            this.checkBoxPassword.AutoSize = true;
+            this.checkBoxPassword.Location = new System.Drawing.Point(27, 56);
+            this.checkBoxPassword.Name = "checkBoxPassword";
+            this.checkBoxPassword.Size = new System.Drawing.Size(72, 17);
+            this.checkBoxPassword.TabIndex = 11;
+            this.checkBoxPassword.Text = "Password";
+            this.checkBoxPassword.UseVisualStyleBackColor = true;
+            this.checkBoxPassword.AppearanceChanged += new System.EventHandler(this.userEditChoice2_SelectedIndexChanged);
+            this.checkBoxPassword.CheckedChanged += new System.EventHandler(this.userEditChoice2_SelectedIndexChanged);
+            // 
+            // checkBoxUsername
+            // 
+            this.checkBoxUsername.AutoSize = true;
+            this.checkBoxUsername.Location = new System.Drawing.Point(27, 32);
+            this.checkBoxUsername.Name = "checkBoxUsername";
+            this.checkBoxUsername.Size = new System.Drawing.Size(74, 17);
+            this.checkBoxUsername.TabIndex = 10;
+            this.checkBoxUsername.Text = "Username";
+            this.checkBoxUsername.UseVisualStyleBackColor = true;
+            this.checkBoxUsername.AppearanceChanged += new System.EventHandler(this.userEditChoice1_SelectedIndexChanged);
+            this.checkBoxUsername.CheckedChanged += new System.EventHandler(this.userEditChoice1_SelectedIndexChanged);
+            // 
+            // btnExit
+            // 
+            this.btnExit.Location = new System.Drawing.Point(52, 551);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(75, 23);
+            this.btnExit.TabIndex = 14;
+            this.btnExit.Text = "Exit";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(965, 610);
+            this.Controls.Add(this.btnExit);
             this.Controls.Add(this.boxEditUser);
             this.Controls.Add(this.checkAnotherUser);
             this.Controls.Add(this.Label3);
@@ -197,14 +238,17 @@
         private System.Windows.Forms.Button btnEditUser;
         private System.Windows.Forms.Button btnLibrary;
         private System.Windows.Forms.Button btnLogOut;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxInput;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnEditSubmit;
         private System.Windows.Forms.ComboBox comboBoxSUser;
         private System.Windows.Forms.Label Label3;
         private System.Windows.Forms.CheckBox checkAnotherUser;
         private System.Windows.Forms.GroupBox boxEditUser;
-        private System.Windows.Forms.CheckedListBox userEditChoice;
         private System.ServiceProcess.ServiceController serviceController1;
+        private System.Windows.Forms.CheckBox checkBoxSSN;
+        private System.Windows.Forms.CheckBox checkBoxPassword;
+        private System.Windows.Forms.CheckBox checkBoxUsername;
+        private System.Windows.Forms.Button btnExit;
     }
 }
