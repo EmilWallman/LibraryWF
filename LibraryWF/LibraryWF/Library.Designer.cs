@@ -30,7 +30,28 @@
         {
             this.lLibrary = new System.Windows.Forms.Label();
             this.gBoxEditBook = new System.Windows.Forms.GroupBox();
+            this.lAddOk = new System.Windows.Forms.Label();
+            this.groupBoxAddBook = new System.Windows.Forms.GroupBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.lGenre = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.lAuthor = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.lTitle = new System.Windows.Forms.Label();
+            this.btnSubmit = new System.Windows.Forms.Button();
+            this.comboBoxDelete = new System.Windows.Forms.ComboBox();
+            this.btnDeleteBook = new System.Windows.Forms.Button();
+            this.btnAddBook = new System.Windows.Forms.Button();
             this.gBoxManageBook = new System.Windows.Forms.GroupBox();
+            this.groupBoxNotAvalible = new System.Windows.Forms.GroupBox();
+            this.lAlreadyLended = new System.Windows.Forms.Label();
+            this.lBookQue = new System.Windows.Forms.Label();
+            this.btnSelect = new System.Windows.Forms.Button();
+            this.btnNo = new System.Windows.Forms.Button();
+            this.comboBoxBooks = new System.Windows.Forms.ComboBox();
+            this.btnYes = new System.Windows.Forms.Button();
+            this.btnReturnBook = new System.Windows.Forms.Button();
+            this.btnLendBook = new System.Windows.Forms.Button();
             this.listViewListBooks = new System.Windows.Forms.ListView();
             this.btnListAllBooks = new System.Windows.Forms.Button();
             this.btnManageBooks = new System.Windows.Forms.Button();
@@ -41,24 +62,13 @@
             this.btnExit = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
             this.listViewSearch = new System.Windows.Forms.ListView();
-            this.btnAddBook = new System.Windows.Forms.Button();
-            this.btnDeleteBook = new System.Windows.Forms.Button();
-            this.comboBoxDelete = new System.Windows.Forms.ComboBox();
-            this.btnSubmit = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.lTitle = new System.Windows.Forms.Label();
-            this.lAuthor = new System.Windows.Forms.Label();
-            this.lGenre = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.lAlreadyLended = new System.Windows.Forms.Label();
-            this.lBookQue = new System.Windows.Forms.Label();
+            this.lErrorAdd = new System.Windows.Forms.Label();
+            this.btnAddGenre = new System.Windows.Forms.Button();
+            this.textBox4 = new System.Windows.Forms.TextBox();
             this.gBoxEditBook.SuspendLayout();
+            this.groupBoxAddBook.SuspendLayout();
             this.gBoxManageBook.SuspendLayout();
+            this.groupBoxNotAvalible.SuspendLayout();
             this.SuspendLayout();
             // 
             // lLibrary
@@ -73,46 +83,252 @@
             // 
             // gBoxEditBook
             // 
-            this.gBoxEditBook.Controls.Add(this.lGenre);
-            this.gBoxEditBook.Controls.Add(this.lAuthor);
-            this.gBoxEditBook.Controls.Add(this.lTitle);
-            this.gBoxEditBook.Controls.Add(this.comboBox1);
-            this.gBoxEditBook.Controls.Add(this.textBox3);
-            this.gBoxEditBook.Controls.Add(this.textBox2);
+            this.gBoxEditBook.Controls.Add(this.textBox4);
+            this.gBoxEditBook.Controls.Add(this.btnAddGenre);
+            this.gBoxEditBook.Controls.Add(this.lAddOk);
+            this.gBoxEditBook.Controls.Add(this.groupBoxAddBook);
             this.gBoxEditBook.Controls.Add(this.btnSubmit);
             this.gBoxEditBook.Controls.Add(this.comboBoxDelete);
             this.gBoxEditBook.Controls.Add(this.btnDeleteBook);
             this.gBoxEditBook.Controls.Add(this.btnAddBook);
             this.gBoxEditBook.Location = new System.Drawing.Point(282, 238);
             this.gBoxEditBook.Name = "gBoxEditBook";
-            this.gBoxEditBook.Size = new System.Drawing.Size(284, 194);
+            this.gBoxEditBook.Size = new System.Drawing.Size(389, 194);
             this.gBoxEditBook.TabIndex = 1;
             this.gBoxEditBook.TabStop = false;
             this.gBoxEditBook.Text = "Edit Books";
+            this.gBoxEditBook.Visible = false;
+            // 
+            // lAddOk
+            // 
+            this.lAddOk.AutoSize = true;
+            this.lAddOk.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lAddOk.Location = new System.Drawing.Point(7, 153);
+            this.lAddOk.Name = "lAddOk";
+            this.lAddOk.Size = new System.Drawing.Size(135, 13);
+            this.lAddOk.TabIndex = 12;
+            this.lAddOk.Text = "Book has been added!";
+            this.lAddOk.Visible = false;
+            this.lAddOk.Click += new System.EventHandler(this.lAddOk_Click);
+            // 
+            // groupBoxAddBook
+            // 
+            this.groupBoxAddBook.Controls.Add(this.textBox3);
+            this.groupBoxAddBook.Controls.Add(this.lGenre);
+            this.groupBoxAddBook.Controls.Add(this.textBox2);
+            this.groupBoxAddBook.Controls.Add(this.lAuthor);
+            this.groupBoxAddBook.Controls.Add(this.comboBox1);
+            this.groupBoxAddBook.Controls.Add(this.lTitle);
+            this.groupBoxAddBook.Location = new System.Drawing.Point(146, 77);
+            this.groupBoxAddBook.Name = "groupBoxAddBook";
+            this.groupBoxAddBook.Size = new System.Drawing.Size(200, 100);
+            this.groupBoxAddBook.TabIndex = 10;
+            this.groupBoxAddBook.TabStop = false;
+            this.groupBoxAddBook.Visible = false;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(56, 39);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(118, 20);
+            this.textBox3.TabIndex = 5;
+            // 
+            // lGenre
+            // 
+            this.lGenre.AutoSize = true;
+            this.lGenre.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lGenre.Location = new System.Drawing.Point(2, 68);
+            this.lGenre.Name = "lGenre";
+            this.lGenre.Size = new System.Drawing.Size(45, 13);
+            this.lGenre.TabIndex = 9;
+            this.lGenre.Text = "Genre:";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(56, 13);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(118, 20);
+            this.textBox2.TabIndex = 4;
+            // 
+            // lAuthor
+            // 
+            this.lAuthor.AutoSize = true;
+            this.lAuthor.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lAuthor.Location = new System.Drawing.Point(2, 42);
+            this.lAuthor.Name = "lAuthor";
+            this.lAuthor.Size = new System.Drawing.Size(48, 13);
+            this.lAuthor.TabIndex = 8;
+            this.lAuthor.Text = "Author:";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(53, 68);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 6;
+            // 
+            // lTitle
+            // 
+            this.lTitle.AutoSize = true;
+            this.lTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lTitle.Location = new System.Drawing.Point(2, 16);
+            this.lTitle.Name = "lTitle";
+            this.lTitle.Size = new System.Drawing.Size(36, 13);
+            this.lTitle.TabIndex = 7;
+            this.lTitle.Text = "Title:";
+            // 
+            // btnSubmit
+            // 
+            this.btnSubmit.Location = new System.Drawing.Point(6, 106);
+            this.btnSubmit.Name = "btnSubmit";
+            this.btnSubmit.Size = new System.Drawing.Size(75, 23);
+            this.btnSubmit.TabIndex = 3;
+            this.btnSubmit.Text = "Submit";
+            this.btnSubmit.UseVisualStyleBackColor = true;
+            this.btnSubmit.Visible = false;
+            // 
+            // comboBoxDelete
+            // 
+            this.comboBoxDelete.FormattingEnabled = true;
+            this.comboBoxDelete.Location = new System.Drawing.Point(146, 20);
+            this.comboBoxDelete.Name = "comboBoxDelete";
+            this.comboBoxDelete.Size = new System.Drawing.Size(157, 21);
+            this.comboBoxDelete.TabIndex = 2;
+            this.comboBoxDelete.Visible = false;
+            // 
+            // btnDeleteBook
+            // 
+            this.btnDeleteBook.Location = new System.Drawing.Point(7, 48);
+            this.btnDeleteBook.Name = "btnDeleteBook";
+            this.btnDeleteBook.Size = new System.Drawing.Size(75, 23);
+            this.btnDeleteBook.TabIndex = 1;
+            this.btnDeleteBook.Text = "Delete Book";
+            this.btnDeleteBook.UseVisualStyleBackColor = true;
+            // 
+            // btnAddBook
+            // 
+            this.btnAddBook.Location = new System.Drawing.Point(7, 20);
+            this.btnAddBook.Name = "btnAddBook";
+            this.btnAddBook.Size = new System.Drawing.Size(75, 23);
+            this.btnAddBook.TabIndex = 0;
+            this.btnAddBook.Text = "Add Book";
+            this.btnAddBook.UseVisualStyleBackColor = true;
+            this.btnAddBook.Click += new System.EventHandler(this.btnAddBook_Click);
             // 
             // gBoxManageBook
             // 
-            this.gBoxManageBook.Controls.Add(this.lBookQue);
-            this.gBoxManageBook.Controls.Add(this.lAlreadyLended);
-            this.gBoxManageBook.Controls.Add(this.comboBox2);
-            this.gBoxManageBook.Controls.Add(this.button4);
-            this.gBoxManageBook.Controls.Add(this.button2);
-            this.gBoxManageBook.Controls.Add(this.button1);
+            this.gBoxManageBook.Controls.Add(this.groupBoxNotAvalible);
+            this.gBoxManageBook.Controls.Add(this.btnSelect);
+            this.gBoxManageBook.Controls.Add(this.btnNo);
+            this.gBoxManageBook.Controls.Add(this.comboBoxBooks);
+            this.gBoxManageBook.Controls.Add(this.btnYes);
+            this.gBoxManageBook.Controls.Add(this.btnReturnBook);
+            this.gBoxManageBook.Controls.Add(this.btnLendBook);
             this.gBoxManageBook.Location = new System.Drawing.Point(282, 24);
             this.gBoxManageBook.Name = "gBoxManageBook";
-            this.gBoxManageBook.Size = new System.Drawing.Size(284, 181);
+            this.gBoxManageBook.Size = new System.Drawing.Size(389, 208);
             this.gBoxManageBook.TabIndex = 2;
             this.gBoxManageBook.TabStop = false;
             this.gBoxManageBook.Text = "Manage Books";
+            this.gBoxManageBook.Visible = false;
+            // 
+            // groupBoxNotAvalible
+            // 
+            this.groupBoxNotAvalible.Controls.Add(this.lAlreadyLended);
+            this.groupBoxNotAvalible.Controls.Add(this.lBookQue);
+            this.groupBoxNotAvalible.Location = new System.Drawing.Point(0, 96);
+            this.groupBoxNotAvalible.Name = "groupBoxNotAvalible";
+            this.groupBoxNotAvalible.Size = new System.Drawing.Size(193, 60);
+            this.groupBoxNotAvalible.TabIndex = 9;
+            this.groupBoxNotAvalible.TabStop = false;
+            this.groupBoxNotAvalible.Visible = false;
+            // 
+            // lAlreadyLended
+            // 
+            this.lAlreadyLended.AutoSize = true;
+            this.lAlreadyLended.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lAlreadyLended.Location = new System.Drawing.Point(21, 17);
+            this.lAlreadyLended.Name = "lAlreadyLended";
+            this.lAlreadyLended.Size = new System.Drawing.Size(148, 13);
+            this.lAlreadyLended.TabIndex = 5;
+            this.lAlreadyLended.Text = "The book is not avalible!";
+            // 
+            // lBookQue
+            // 
+            this.lBookQue.AutoSize = true;
+            this.lBookQue.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lBookQue.Location = new System.Drawing.Point(6, 33);
+            this.lBookQue.Name = "lBookQue";
+            this.lBookQue.Size = new System.Drawing.Size(181, 13);
+            this.lBookQue.TabIndex = 6;
+            this.lBookQue.Text = "Would you like to get in queue";
+            // 
+            // btnSelect
+            // 
+            this.btnSelect.Location = new System.Drawing.Point(290, 20);
+            this.btnSelect.Name = "btnSelect";
+            this.btnSelect.Size = new System.Drawing.Size(75, 23);
+            this.btnSelect.TabIndex = 8;
+            this.btnSelect.Text = "Select";
+            this.btnSelect.UseVisualStyleBackColor = true;
+            // 
+            // btnNo
+            // 
+            this.btnNo.Location = new System.Drawing.Point(199, 133);
+            this.btnNo.Name = "btnNo";
+            this.btnNo.Size = new System.Drawing.Size(75, 23);
+            this.btnNo.TabIndex = 7;
+            this.btnNo.Text = "No";
+            this.btnNo.UseVisualStyleBackColor = true;
+            this.btnNo.Visible = false;
+            // 
+            // comboBoxBooks
+            // 
+            this.comboBoxBooks.FormattingEnabled = true;
+            this.comboBoxBooks.Location = new System.Drawing.Point(127, 22);
+            this.comboBoxBooks.Name = "comboBoxBooks";
+            this.comboBoxBooks.Size = new System.Drawing.Size(157, 21);
+            this.comboBoxBooks.TabIndex = 4;
+            // 
+            // btnYes
+            // 
+            this.btnYes.Location = new System.Drawing.Point(199, 103);
+            this.btnYes.Name = "btnYes";
+            this.btnYes.Size = new System.Drawing.Size(75, 23);
+            this.btnYes.TabIndex = 3;
+            this.btnYes.Text = "Yes";
+            this.btnYes.UseVisualStyleBackColor = true;
+            this.btnYes.Visible = false;
+            // 
+            // btnReturnBook
+            // 
+            this.btnReturnBook.Location = new System.Drawing.Point(7, 50);
+            this.btnReturnBook.Name = "btnReturnBook";
+            this.btnReturnBook.Size = new System.Drawing.Size(75, 23);
+            this.btnReturnBook.TabIndex = 1;
+            this.btnReturnBook.Text = "Return Book";
+            this.btnReturnBook.UseVisualStyleBackColor = true;
+            // 
+            // btnLendBook
+            // 
+            this.btnLendBook.Location = new System.Drawing.Point(7, 20);
+            this.btnLendBook.Name = "btnLendBook";
+            this.btnLendBook.Size = new System.Drawing.Size(75, 23);
+            this.btnLendBook.TabIndex = 0;
+            this.btnLendBook.Text = "Lend Book";
+            this.btnLendBook.UseVisualStyleBackColor = true;
+            this.btnLendBook.Click += new System.EventHandler(this.btnLendBook_Click);
             // 
             // listViewListBooks
             // 
             this.listViewListBooks.HideSelection = false;
-            this.listViewListBooks.Location = new System.Drawing.Point(572, 12);
+            this.listViewListBooks.Location = new System.Drawing.Point(677, 12);
             this.listViewListBooks.Name = "listViewListBooks";
             this.listViewListBooks.Size = new System.Drawing.Size(231, 433);
             this.listViewListBooks.TabIndex = 4;
             this.listViewListBooks.UseCompatibleStateImageBehavior = false;
+            this.listViewListBooks.Visible = false;
             // 
             // btnListAllBooks
             // 
@@ -131,6 +347,7 @@
             this.btnManageBooks.TabIndex = 6;
             this.btnManageBooks.Text = "ManageBooks";
             this.btnManageBooks.UseVisualStyleBackColor = true;
+            this.btnManageBooks.Click += new System.EventHandler(this.btnManageBooks_Click);
             // 
             // btnEditBooks
             // 
@@ -141,6 +358,7 @@
             this.btnEditBooks.Text = "Edit Books";
             this.btnEditBooks.UseVisualStyleBackColor = true;
             this.btnEditBooks.Visible = false;
+            this.btnEditBooks.Click += new System.EventHandler(this.btnEditBooks_Click);
             // 
             // textBox1
             // 
@@ -170,7 +388,7 @@
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(38, 409);
+            this.btnExit.Location = new System.Drawing.Point(29, 502);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(75, 23);
             this.btnExit.TabIndex = 11;
@@ -179,7 +397,7 @@
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(38, 380);
+            this.btnBack.Location = new System.Drawing.Point(29, 473);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(75, 23);
             this.btnBack.TabIndex = 12;
@@ -195,154 +413,42 @@
             this.listViewSearch.TabIndex = 13;
             this.listViewSearch.UseCompatibleStateImageBehavior = false;
             // 
-            // btnAddBook
+            // lErrorAdd
             // 
-            this.btnAddBook.Location = new System.Drawing.Point(7, 20);
-            this.btnAddBook.Name = "btnAddBook";
-            this.btnAddBook.Size = new System.Drawing.Size(75, 23);
-            this.btnAddBook.TabIndex = 0;
-            this.btnAddBook.Text = "Add Book";
-            this.btnAddBook.UseVisualStyleBackColor = true;
+            this.lErrorAdd.AutoSize = true;
+            this.lErrorAdd.BackColor = System.Drawing.Color.Red;
+            this.lErrorAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lErrorAdd.Location = new System.Drawing.Point(12, 361);
+            this.lErrorAdd.Name = "lErrorAdd";
+            this.lErrorAdd.Size = new System.Drawing.Size(246, 13);
+            this.lErrorAdd.TabIndex = 11;
+            this.lErrorAdd.Text = "ERROR somerthing went wrong! Try again";
+            this.lErrorAdd.Visible = false;
             // 
-            // btnDeleteBook
+            // btnAddGenre
             // 
-            this.btnDeleteBook.Location = new System.Drawing.Point(7, 48);
-            this.btnDeleteBook.Name = "btnDeleteBook";
-            this.btnDeleteBook.Size = new System.Drawing.Size(75, 23);
-            this.btnDeleteBook.TabIndex = 1;
-            this.btnDeleteBook.Text = "Delete Book";
-            this.btnDeleteBook.UseVisualStyleBackColor = true;
+            this.btnAddGenre.Location = new System.Drawing.Point(6, 77);
+            this.btnAddGenre.Name = "btnAddGenre";
+            this.btnAddGenre.Size = new System.Drawing.Size(75, 23);
+            this.btnAddGenre.TabIndex = 13;
+            this.btnAddGenre.Text = "Add Genre";
+            this.btnAddGenre.UseVisualStyleBackColor = true;
+            this.btnAddGenre.Visible = false;
             // 
-            // comboBoxDelete
+            // textBox4
             // 
-            this.comboBoxDelete.FormattingEnabled = true;
-            this.comboBoxDelete.Location = new System.Drawing.Point(104, 22);
-            this.comboBoxDelete.Name = "comboBoxDelete";
-            this.comboBoxDelete.Size = new System.Drawing.Size(157, 21);
-            this.comboBoxDelete.TabIndex = 2;
-            // 
-            // btnSubmit
-            // 
-            this.btnSubmit.Location = new System.Drawing.Point(7, 74);
-            this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(75, 23);
-            this.btnSubmit.TabIndex = 3;
-            this.btnSubmit.Text = "Submit";
-            this.btnSubmit.UseVisualStyleBackColor = true;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(60, 103);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(118, 20);
-            this.textBox2.TabIndex = 4;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(60, 129);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(118, 20);
-            this.textBox3.TabIndex = 5;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(57, 158);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 6;
-            // 
-            // lTitle
-            // 
-            this.lTitle.AutoSize = true;
-            this.lTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lTitle.Location = new System.Drawing.Point(6, 106);
-            this.lTitle.Name = "lTitle";
-            this.lTitle.Size = new System.Drawing.Size(36, 13);
-            this.lTitle.TabIndex = 7;
-            this.lTitle.Text = "Title:";
-            // 
-            // lAuthor
-            // 
-            this.lAuthor.AutoSize = true;
-            this.lAuthor.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lAuthor.Location = new System.Drawing.Point(6, 132);
-            this.lAuthor.Name = "lAuthor";
-            this.lAuthor.Size = new System.Drawing.Size(48, 13);
-            this.lAuthor.TabIndex = 8;
-            this.lAuthor.Text = "Author:";
-            // 
-            // lGenre
-            // 
-            this.lGenre.AutoSize = true;
-            this.lGenre.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lGenre.Location = new System.Drawing.Point(6, 158);
-            this.lGenre.Name = "lGenre";
-            this.lGenre.Size = new System.Drawing.Size(45, 13);
-            this.lGenre.TabIndex = 9;
-            this.lGenre.Text = "Genre:";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(7, 20);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(7, 50);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(186, 116);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(104, 19);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(157, 21);
-            this.comboBox2.TabIndex = 4;
-            // 
-            // lAlreadyLended
-            // 
-            this.lAlreadyLended.AutoSize = true;
-            this.lAlreadyLended.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lAlreadyLended.Location = new System.Drawing.Point(19, 91);
-            this.lAlreadyLended.Name = "lAlreadyLended";
-            this.lAlreadyLended.Size = new System.Drawing.Size(148, 13);
-            this.lAlreadyLended.TabIndex = 5;
-            this.lAlreadyLended.Text = "The book is not avalible!";
-            // 
-            // lBookQue
-            // 
-            this.lBookQue.AutoSize = true;
-            this.lBookQue.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lBookQue.Location = new System.Drawing.Point(6, 104);
-            this.lBookQue.Name = "lBookQue";
-            this.lBookQue.Size = new System.Drawing.Size(181, 13);
-            this.lBookQue.TabIndex = 6;
-            this.lBookQue.Text = "Would you like to get in queue";
+            this.textBox4.Location = new System.Drawing.Point(146, 51);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(157, 20);
+            this.textBox4.TabIndex = 14;
             // 
             // Library
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(815, 457);
+            this.ClientSize = new System.Drawing.Size(920, 551);
             this.Controls.Add(this.listViewSearch);
+            this.Controls.Add(this.lErrorAdd);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnSearch);
@@ -360,8 +466,11 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.gBoxEditBook.ResumeLayout(false);
             this.gBoxEditBook.PerformLayout();
+            this.groupBoxAddBook.ResumeLayout(false);
+            this.groupBoxAddBook.PerformLayout();
             this.gBoxManageBook.ResumeLayout(false);
-            this.gBoxManageBook.PerformLayout();
+            this.groupBoxNotAvalible.ResumeLayout(false);
+            this.groupBoxNotAvalible.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -394,9 +503,17 @@
         private System.Windows.Forms.ComboBox comboBoxDelete;
         private System.Windows.Forms.Label lBookQue;
         private System.Windows.Forms.Label lAlreadyLended;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox comboBoxBooks;
+        private System.Windows.Forms.Button btnYes;
+        private System.Windows.Forms.Button btnReturnBook;
+        private System.Windows.Forms.Button btnLendBook;
+        private System.Windows.Forms.Button btnSelect;
+        private System.Windows.Forms.Button btnNo;
+        private System.Windows.Forms.GroupBox groupBoxNotAvalible;
+        private System.Windows.Forms.GroupBox groupBoxAddBook;
+        private System.Windows.Forms.Label lAddOk;
+        private System.Windows.Forms.Label lErrorAdd;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Button btnAddGenre;
     }
 }
