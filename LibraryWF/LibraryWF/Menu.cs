@@ -71,7 +71,7 @@ namespace LibraryWF
                 whatToEdit = "ssn";
             }
 
-            //display some error
+            
             
             if(whatToEdit == "")
             {
@@ -121,8 +121,7 @@ namespace LibraryWF
 
         }
         
-        //****HAVE SOME ISSUES nut almost woks and has to be better done ***
-        //Only one alternative can be selected
+
         private void userEditChoice1_SelectedIndexChanged(object sender, EventArgs e)
         {
             checkBoxPassword.Checked = false;
@@ -159,8 +158,8 @@ namespace LibraryWF
         {
             Library library = new Library(currentUser);
             LibraryLogic libraryLogic = new LibraryLogic();
-            string userSsn = "";
-            currentUser.ssn = userSsn;
+            string userSsn = currentUser.ssn;
+            
 
             this.Hide();
             library.Show();
@@ -203,14 +202,17 @@ namespace LibraryWF
                         case "username":
                             user.username = input;
                             SaveUsers();
+                            MessageBox.Show("Username has been changed");
                             break;
                         case "password":
                             user.password = input;
                             SaveUsers();
+                            MessageBox.Show("Password has been changed");
                             break;
                         case "ssn":
                             user.ssn = input;
                             SaveUsers();
+                            MessageBox.Show("Social security number has been changed");
                             break;
                     }
                     break;

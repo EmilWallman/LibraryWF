@@ -13,7 +13,10 @@ namespace LibraryWF
         /// </summary>
         [STAThread]
         static void Main()
-        {
+        { 
+            LibraryLogic libraryLogic = new LibraryLogic();
+            MenuLogic menuLogic = new MenuLogic();
+            Application.EnableVisualStyles();
             Login login = new Login();
             Application.Run(login);
 
