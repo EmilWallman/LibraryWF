@@ -171,7 +171,7 @@ namespace LibraryWF
             //Returning Book
             else if(currentOperation == LibraryOperation.ReturnBook)
             {
-                string BookToReturn = comboBoxBooks.Text;
+                string BookToReturn = comboBoxBooks.SelectedItem.ToString();
 
                 libraryLogic.ReturnBook(BookToReturn, currentUser.ssn);
                 MessageBox.Show("Book has been returned");
