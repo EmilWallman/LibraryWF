@@ -96,7 +96,7 @@ namespace LibraryWF
             //Lend Book
             if (currentOperation == LibraryOperation.LendBook)
             {
-                string bookToLend = comboBoxBooks.Text;
+                string bookToLend = comboBoxBooks.SelectedItem.ToString();
 
                 int LendBook = libraryLogic.LendBook(bookToLend, currentUser.ssn);
 
