@@ -31,3 +31,4 @@ C:\Users\emilw\LibraryWF\LibraryWF\LibraryWF\obj\Debug\LibraryWF.csproj.CopyComp
 C:\Users\emilw\LibraryWF\LibraryWF\LibraryWF\obj\Debug\LibraryWF.exe
 C:\Users\emilw\LibraryWF\LibraryWF\LibraryWF\obj\Debug\LibraryWF.pdb
 C:\Users\emilw\LibraryWF\LibraryWF\LibraryWF\obj\Debug\LibraryWF.Library.resources
+C:\Users\emil.wallman\LibraryWF\LibraryWF\LibraryWF\obj\Debug\LibraryWF.Library.resources
